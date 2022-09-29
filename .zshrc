@@ -1,3 +1,12 @@
+echo '''
+ㅤ  ∧＿∧
+　(　･∀･)
+　(　つ┳⊃
+ε (_)へ⌒ヽﾌ
+ (　　(　･ω･)
+ ◎―◎   ⊃  ⊃
+'''
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -115,8 +124,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias py='python3'
 alias p='cd /home/cofi/Documents/projects/python'
-alias r='cd /home/cofi/Documents/projects/react'
+alias r='cd /home/cofi/Documents/projects/js/react'
 alias b='cd /home/cofi/Documents/projects/bash'
+alias j='cd /home/cofi/Documents/projects/js'
 alias ..='cd ..'
 alias c='clear'
 alias updt='sudo pacman -Syu -y && sudo flatpak update -y'
@@ -126,6 +136,9 @@ alias run='python3 manage.py runserver'
 alias files='xdg-open'
 alias reactC='npx create-react-app'
 alias gitsave='git config credential.helper store'
+alias migrate='python3 manage.py makemigrations && python3 manage.py migrate'
+
+eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
