@@ -127,6 +127,7 @@ alias p='cd /home/cofi/Documents/projects/python'
 alias r='cd /home/cofi/Documents/projects/js/react'
 alias b='cd /home/cofi/Documents/projects/bash'
 alias j='cd /home/cofi/Documents/projects/js'
+alias g='cd /home/cofi/Documents/projects/go'
 alias ..='cd ..'
 alias c='clear'
 alias updt='sudo pacman -Syu --noconfirm && sudo flatpak update -y'
@@ -137,8 +138,8 @@ alias files='xdg-open'
 alias reactC='npx create-react-app'
 alias gitsave='git config credential.helper store'
 alias migrate='python3 manage.py makemigrations && python3 manage.py migrate'
-alias smigrate='sudo python3 manage.py makemigrations && sudo python3 manage.py migrate'
-alias srun='sudo python3 manage.py runserver'
+alias mkm='python3 manage.py makemigrations'
+
 eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
