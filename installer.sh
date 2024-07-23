@@ -1,12 +1,13 @@
 #!/bin/bash
 
-echo "Are you on Arch?"
+
 # read answer
-answer = 'y'
-echo $answer
-if [[$answer = 'y']];
+platform=$1
+
+if [[ $platform = arch ]];
 then
-    echo 'install'
+    echo installing ZSH
+    
 else
     echo 'currently only working for arch.'
 fi

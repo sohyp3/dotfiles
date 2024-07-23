@@ -124,21 +124,25 @@ source $ZSH/oh-my-zsh.sh
 
 alias py='python3'
 alias p='cd /home/cofi/Documents/projects/python'
-alias r='cd /home/cofi/Documents/projects/js/react'
+alias r='cd /home/cofi/Documents/projects/rust'
 alias b='cd /home/cofi/Documents/projects/bash'
 alias j='cd /home/cofi/Documents/projects/js'
 alias g='cd /home/cofi/Documents/projects/go'
+alias sv='cd /home/cofi/Documents/projects/js/svelte'
+alias cl='cd /home/cofi/Documents/projects/c'
 alias ..='cd ..'
 alias c='clear'
 alias updt='sudo pacman -Syu --noconfirm && sudo flatpak update -y'
 alias shut='shutdown now'
-alias code='codium'
+# alias code='codium'
 alias run='python3 manage.py runserver'
-alias files='xdg-open'
+alias open='xdg-open'
 alias reactC='npx create-react-app'
 alias gitsave='git config credential.helper store'
 alias migrate='python3 manage.py makemigrations && python3 manage.py migrate'
 alias mkm='python3 manage.py makemigrations'
+alias srch='sudo /home/cofi/Documents/projects/python/commandor/local.py && open /home/cofi/Documents/projects/python/commandor/out'
+alias carp='/home/cofi/Documents/projects/xp/goProj/carp'
 
 eval $(thefuck --alias)
 
@@ -146,3 +150,9 @@ eval $(thefuck --alias)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 PATH=~/maven/bin:$PATH
+
+export ANDROID_HOME=$HOME/Android/Sdk
+
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+

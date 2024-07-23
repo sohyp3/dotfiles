@@ -1,0 +1,33 @@
+body, .main-editor-wrapper .cm-editor, .CodeMirror, .CodeMirror-scroll {
+    background-color: #e0f7fa !important; /* Light sky blue background */
+    color: #333 !important; /* Dark text color for readability */
+    border-radius: 10px !important; /* Rounded corners */
+}
+.cm-content {
+      font-family: 'Cascadia Code', monospace !important; /* Cascadia Code font */
+
+}
+.cm-code-mark{
+  color: #FFD700 !important;
+}
+.tab-container .active{
+  border-bottom: 3px solid #FFD700 !important;
+}
+.CodeMirror-selected {
+    background-color: #FFFF00 !important; /* Yellow highlight */
+}
+img{
+      border-radius: 7px !important; /* Rounded corners */
+
+}
+.cm-tooltip{
+  display:none;
+}
+.ͼ1d.cm-focused .cm-scroller .cm-layer.cm-selectionLayer .cm-selectionBackground, .ͼ1d ::selection{
+
+  background:#FFFF00 !important;
+  opacity: 0.8;
+  
+  border-bottom: 3px solid #FFD700 !important;
+
+}
