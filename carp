@@ -1,0 +1,28 @@
+#!/bin/bash
+
+cd /home/cofi/Documents/projects/python/Carp
+
+source c_env/bin/activate
+
+cd carp
+
+code .
+
+tmux new-session -d -s carp
+
+tmux rename-window -t 0 'vi'
+tmux send-keys -t carp 'nvim .' C-m
+
+tmux new-window -t carp
+tmux rename-window 'ter'
+tmux send-keys -t carp 'run' C-m
+
+tmux new-window -t carp
+tmux rename-window 'tw'
+tmux send-keys -t carp 'cd contracts/static/css' C-m
+tmux send-keys -t carp 'npx tailwindcss -i tailwind.css -o tw.css --watch' C-m
+
+tmux select-window -t 'vi'
+
+tmux attach -t carp
+
