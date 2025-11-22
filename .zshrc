@@ -1,3 +1,4 @@
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 echo '''
 ㅤ  ∧＿∧
 　(　･∀･)
@@ -24,7 +25,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -122,28 +123,43 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+
+
+
 alias py='python3'
-alias p='cd /home/cofi/Documents/projects/python'
-alias r='cd /home/cofi/Documents/projects/rust'
-alias b='cd /home/cofi/Documents/projects/bash'
-alias j='cd /home/cofi/Documents/projects/js'
-alias g='cd /home/cofi/Documents/projects/go'
-alias sv='cd /home/cofi/Documents/projects/js/svelte'
-alias cl='cd /home/cofi/Documents/projects/c'
+alias pj='cd /home/hy/Documents/projects'
+alias p='cd /home/hy/Documents/projects/python'
+alias r='cd /home/hy/Documents/projects/rust'
+alias b='cd /home/hy/Documents/projects/bash'
+alias j='cd /home/hy/Documents/projects/js'
+alias gl='cd /home/hy/Documents/projects/go'
+alias sv='cd /home/hy/Documents/projects/js/svelte'
+alias cl='cd /home/hy/Documents/projects/c'
 alias ..='cd ..'
 alias c='clear'
 alias updt='sudo pacman -Syu --noconfirm && sudo flatpak update -y'
 alias shut='shutdown now'
-# alias code='codium'
+alias code='codium'
 alias run='python3 manage.py runserver'
 alias open='xdg-open'
-alias reactC='npx create-react-app'
 alias gitsave='git config credential.helper store'
-alias migrate='python3 manage.py makemigrations && python3 manage.py migrate'
+alias migrate='python3 manage.py migrate'
 alias mkm='python3 manage.py makemigrations'
-alias srch='sudo /home/cofi/Documents/projects/python/commandor/local.py && open /home/cofi/Documents/projects/python/commandor/out'
-alias carp='/home/cofi/Documents/projects/xp/goProj/carp'
+alias srch='sudo /home/hy/Documents/projects/python/commandor/local.py && open /home/hy/Documents/projects/python/commandor/out'
 
+
+alias carp='/home/hy/Documents/projects/bash/carp'
+alias vi='nvim'
+alias exut='/home/hy/Documents/projects/bash/exut'
+alias vroom='/home/hy/Documents/projects/bash/vro'
+alias gro='/home/hy/Documents/projects/bash/gro'
+alias gro_lb='/home/hy/Documents/projects/bash/gro_lb'
+alias jold='/home/hy/Documents/projects/bash/jold'
+alias gpm='/home/hy/Documents/projects/bash/pr-merger.sh'
+alias cpy='xclip -selection clipboard'
+alias gcm='/home/hy/Documents/projects/bash/gcm'
+
+alias moro='ssh root@172.236.220.178'
 eval $(thefuck --alias)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -155,4 +171,40 @@ export ANDROID_HOME=$HOME/Android/Sdk
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+
+# bun completions
+[ -s "/home/hy/.bun/_bun" ] && source "/home/hy/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
+
+
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
+
+
+# Enable branch completion for gcm script
+_gcm_complete() {
+  local -a branches
+  branches=("${(@f)$(git for-each-ref --format='%(refname:short)' refs/heads/)}")
+  _describe 'branches' branches
+}
+compdef _gcm_complete gcm
+
+
+# >>> NODE VERSION SELECTOR >>>
+
+# Use Node 22
+export PATH="/usr/node/node_22/bin:$PATH"
+
+# Use Node 20
+# export PATH="/usr/node/node_20/bin:$PATH"
+
+# <<< NODE VERSION SELECTOR <<<
 
